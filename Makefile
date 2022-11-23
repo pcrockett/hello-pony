@@ -1,6 +1,9 @@
-.PHONY: build
+.PHONY: build clean
 
-build: hello-pony
+build: dist/hello-pony
 
-hello-pony: main.pony
-	ponyc
+clean:
+	rm -rf dist
+
+dist/hello-pony: main.pony
+	ponyc --output dist
